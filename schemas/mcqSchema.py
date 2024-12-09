@@ -5,7 +5,7 @@ class mcqSchema(BaseModel):
     id: str
     question: str
     options: List[str]
-    correct_option: str
+    answers: List[str]
     used: bool
 
     

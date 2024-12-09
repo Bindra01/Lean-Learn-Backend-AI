@@ -6,7 +6,7 @@ def fillquestionEntity(item):
         "id": str(item.get("_id", "")),
         'question': item.get("question", ""),
         "choices": item.get("choices", []),
-        'answer': item.get('answer', ""),
+        'answers': item.get('answer', []),
         'used': bool(used_value)  # Added used field
     }
 

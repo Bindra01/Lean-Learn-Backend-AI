@@ -1,6 +1,6 @@
 from database.database import mcq_collection
 from fastapi import status , HTTPException
-from models.questionEntity import mcqEntity , mcqEntitys
+from models.mcqQuestionEntity import mcqEntity , mcqEntitys
 from schemas.mcqSchema import mcqSchema
 from bson import ObjectId
 

@@ -8,7 +8,7 @@ def mcqEntity(item):
         "id": str(item.get("_id", "")),
         'question': item.get("question", ""),
         'options': item.get('options', []),
-        'correct_option': item.get('correct_option', ""),
+        'answers': item.get('answers', []),
         'used': bool(used_value)# Convert to boolean
     }
 

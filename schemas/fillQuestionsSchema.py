@@ -5,5 +5,5 @@ class FillQuestionSchema(BaseModel):
     id: str
     question: str
     choices: List[str]
-    correct_answer: str
+    answers: List[str]
     used: bool
