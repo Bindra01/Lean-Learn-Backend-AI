@@ -3,3 +3,4 @@ uvicorn
 python-dotenv
 # sqlalchemy==1.4.31
 pymongo[srv]
+python-dotenv
