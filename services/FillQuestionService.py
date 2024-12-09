@@ -27,7 +27,7 @@ def Create_fill_question(fillSchema: FillQuestionSchema):
     question_dict = fillSchema.model_dump()
     insterted_item = fill_collection.insert_one(question_dict)
     question_dict["_id"] = insterted_item.inserted_id
-    return fillquestionEntity(question_dict)    
+    return fillquestionEntity(question_dict)
 
 
 def update_fill_question(id: str, fillSchema: FillQuestionSchema):
