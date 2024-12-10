@@ -6,6 +6,7 @@ def mcqEntity(item):
     
     return {
         "id": str(item.get("_id", "")),
+        'subject': item.get("subject", ""),
         'topic': item.get("topic", ""),
         'question': item.get("question", ""),
         'options': item.get('options', []),
@@ -14,5 +15,6 @@ def mcqEntity(item):
         'used': bool(used_value)# Convert to boolean
     }
 
-def mcqEntitys(items):
+def mcq
+Entitys(items):
     return [mcqEntity(item) for item in items]

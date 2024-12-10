@@ -4,6 +4,7 @@ def fillquestionEntity(item):
         used_value = used_value.lower() == 'true'
     return {
         "id": str(item.get("_id", "")),
+        'subject': item.get("subject", ""),
         'topic': item.get("topic", ""),
         'question': item.get("question", ""),
         "choices": item.get("choices", []),

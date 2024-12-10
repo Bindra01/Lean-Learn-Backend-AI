@@ -3,6 +3,7 @@ from typing import List
 
 class mcqSchema(BaseModel):
     id: str
+    subject: str
     topic: str
     question: str
     options: List[str]

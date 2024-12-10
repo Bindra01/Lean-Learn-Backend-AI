@@ -5,11 +5,12 @@ def tfEntity(item):
         used_value = used_value.lower() == 'true'
     return {
         "id": str(item.get("_id", "")),
+        'subject': item.get("subject", ""),
         'topic': item.get("topic", ""),
         'question': item.get("question", ""),
         'answer': item.get('answer', ""),
         'resource': item.get('resource', []),
-        'used': bool(item.get('used', False))  # Added used field
+        'used': bool(used_value)  # Added used field
     }
 
 def tfEntitys(items):
