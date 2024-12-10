@@ -15,6 +15,5 @@ def mcqEntity(item):
         'used': bool(used_value)# Convert to boolean
     }
 
-def mcq
-Entitys(items):
+def mcqEntitys(items):
     return [mcqEntity(item) for item in items]
