@@ -10,6 +10,6 @@ router = APIRouter(
 def explain_wrong_answer(wrong_answer: WrongAnswerSchema):
     return get_explaination(wrong_answer)
 
-@router.post("/report" ,status_code=status.HTTP_200_OK)
+@router.post("/report" ,status_code=status.HTTP_200_OK , description="Api under development")
 def get_report_quiz(question: str):
     return get_report(question)

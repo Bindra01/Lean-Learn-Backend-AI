@@ -4,10 +4,13 @@ def fillquestionEntity(item):
         used_value = used_value.lower() == 'true'
     return {
         "id": str(item.get("_id", "")),
+        'topic': item.get("topic", ""),
         'question': item.get("question", ""),
         "choices": item.get("choices", []),
         'answers': item.get('answer', []),
-        'used': bool(used_value)  # Added used field
+        'resource': item.get('resource', []),
+        'used': bool(used_value) 
+         # Added used field
     }
 
 def fillquestionEntitys(items):

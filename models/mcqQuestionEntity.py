@@ -6,9 +6,11 @@ def mcqEntity(item):
     
     return {
         "id": str(item.get("_id", "")),
+        'topic': item.get("topic", ""),
         'question': item.get("question", ""),
         'options': item.get('options', []),
         'answers': item.get('answers', []),
+        'resource': item.get('resource', []),
         'used': bool(used_value)# Convert to boolean
     }
 
