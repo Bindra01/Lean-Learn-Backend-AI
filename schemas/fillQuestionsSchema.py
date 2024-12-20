@@ -3,6 +3,7 @@ from typing import List
 
 class FillQuestionSchema(BaseModel):
     id: str
+    class_: str
     subject: str
     topic: str
     question: str

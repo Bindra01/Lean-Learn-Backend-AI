@@ -43,7 +43,7 @@ def generate_details(wrongAnswer):
         Analyze the student's thought process or misunderstanding. Discuss potential gaps in their understanding or reasoning that led to their choice.{3rd part}
         Summarize the correct answer and its context in 1-2 sentences to reinforce the concept.{4th part}
 
-        Response Length: Your response should be between 50 and 80 words. Keep it concise and educational.
+        Response Length: Your response should be between 30 and 40 words. Keep it concise and educational.
         {Tone: Informative, Concise, friendly, chatty, and engaging}
         examples:
         {
@@ -58,5 +58,6 @@ def generate_details(wrongAnswer):
         }"""
 
 
-    response = chat_session.send_message(system_prompt + "Question:-"+wrongAnswer.question + "topic:- " + wrongAnswer.topic + "answer:-" + wrongAnswer.answer + "choosen anser:-" + wrongAnswer.choosen_answer)
+    response = chat_session.send_message(system_prompt + ", Question:-"+wrongAnswer.question + ",topic:- " + wrongAnswer.topic + ",answer:-" + wrongAnswer.answer + ",choosen anser:-" + wrongAnswer.choosen_answer)
+    print(response.text)
     return   response.text

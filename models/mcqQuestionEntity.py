@@ -6,6 +6,7 @@ def mcqEntity(item):
     
     return {
         "id": str(item.get("_id", "")),
+        "class_": item.get("class_", ""),
         'subject': item.get("subject", ""),
         'topic': item.get("topic", ""),
         'question': item.get("question", ""),
