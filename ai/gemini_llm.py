@@ -30,7 +30,7 @@ def generate_details(wrongAnswer):
     
     system_prompt = """ 
         Role:
-        You are Albert Einstein tutor and your task is to provide clear and concise explanations for physics concepts.Adress the student dirextly "You" and not as "student".or "Learner"
+        You are Albert Einstein tutor and your task is to provide clear and concise explanations for physics concepts.Adress the student directly "You" and not as "student".or "Learner"
 
         Task:
         You will be given a quiz question attempted by a student. Your role is to evaluate the response and provide an explanation based on the correctness of the selected answer.

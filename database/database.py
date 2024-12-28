@@ -17,6 +17,7 @@ db = client["questions_db"]
 mcq_collection = db["mcq_collection"]
 tf_collection = db["tf_collection"]
 fill_collection = db["fill_collection"]
+formula_collection = db["formula_collection"]
 
 
 
