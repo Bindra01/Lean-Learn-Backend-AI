@@ -25,3 +25,6 @@ app.include_router(mcq_router)
 app.include_router(fill_router)
 app.include_router(formula_router)
 app.include_router(ai_router)
+
+if __name__ == "__main__":
+    uvicorn.run(app, host="0.0.0.0", port=10000)
