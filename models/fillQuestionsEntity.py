@@ -9,7 +9,7 @@ def fillquestionEntity(item):
         'topic': item.get("topic", ""),
         'question': item.get("question", ""),
         "choices": item.get("choices", []),
-        'answers': item.get('answer', []),
+        'answers': item.get('answers', []),
         'resource': item.get('resource', []),
         'used': bool(used_value) 
          # Added used field
