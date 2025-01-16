@@ -9,6 +9,7 @@ class mcqSchema(BaseModel):
     question: str
     options: List[str]
     answers: List[str]
+    captions: List[str]
     resource: List[str]
     used: bool
 

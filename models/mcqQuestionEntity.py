@@ -13,6 +13,7 @@ def mcqEntity(item):
         'options': item.get('options', []),
         'answers': item.get('answers', []),
         'resource': item.get('resource', []),
+        'captions': item.get('captions', []),
         'used': bool(used_value)# Convert to boolean
     }
 
