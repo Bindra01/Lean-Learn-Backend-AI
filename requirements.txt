@@ -7,4 +7,4 @@ python-dotenv
 certifi
 google
 google-generativeai
-ChatOpenAI
+langchain-openai
