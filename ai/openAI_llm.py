@@ -7,6 +7,13 @@ load_dotenv()
 
 messages = []
 
+
+os.environ["LANGSMITH_TRACING"] = "true"
+os.environ["LANGSMITH_ENDPOINT"] = "https://api.smith.langchain.com"
+os.environ["LANGSMITH_API_KEY"] = os.getenv("LANGSMITH_API_KEY")
+os.environ["LANGSMITH_PROJECT"] = os.getenv("LANGSMITH_PROJECT")
+os.environ["OPENAI_API_KEY"] = os.getenv("OPENAI_API_KEY")
+
 humanMessage = SystemMessage(content="""
         #Role:
         You are a human level tutor and your task is to provide clear and concise explanations for physics concepts. Adress the student directly "You" and not as "student".or "Learner"
@@ -20,22 +27,14 @@ humanMessage = SystemMessage(content="""
         Briefly explain why the student's selected answer is accurate.{2nd part if correct answer}
         Explain why the selected answer is wrong and provide reasoning for the correct answer.{2rd part if wrong answer}
         Analyze the student's thought process or misunderstanding. Discuss potential gaps in their understanding or reasoning that led to their choice.{3rd part}
-        Summarize the correct answer and its context in 1-2 sentences to reinforce the concept.{4th part}
+        Summarize the correct answer and it's context in 1-2 sentences to reinforce the concept.{4th part}
 
         Response Length: Your response should be between 30 and 40 words. Keep it concise and educational.
-        [Tone: Informative, Concise, friendly, chatty, engaging and encouraging]
         
-        examples:
-        {
-        Your answer, mass, is incorrect.
-        Here’s why: When something is in motion, the one thing that always changes with time is its position. Motion means the object is moving, so its location (position) relative to other objects changes.
-        Why might you have chosen mass? You might be thinking of physical properties like weight or size when imagining motion. However, an object's mass stays constant whether it’s moving or not.
-        Think about this: A ball rolling across the floor doesn’t lose or gain mass—it’s the position of the ball that changes as it moves. Understanding the difference between physical properties (like mass) and motion-related changes (like position) is important in physics!
-        },
-        {
-        Great job! Your answer, position, is correct.
-        When something is in motion, it means it is changing its place or position over time. For example, if a car is moving down a road, its position relative to buildings or trees keeps changing. That’s what motion is all about—changing position with time! Keep it up!
-        }""")
+        [Tone: Informative, Concise, friendly, chatty, engaging and encouraging]
+                             
+        # Use relevant emojis to make the response more engaging and friendly.
+        """)
 
 messages.append(humanMessage)
 

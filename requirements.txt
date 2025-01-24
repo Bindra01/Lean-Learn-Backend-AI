@@ -8,3 +8,4 @@ certifi
 google
 google-generativeai
 langchain-openai
+langsmith
