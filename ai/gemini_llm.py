@@ -22,6 +22,7 @@ model = genai.GenerativeModel(
 
 chat_session = model.start_chat(
   history=[
+      
   ]
 )
 
@@ -58,6 +59,6 @@ def generate_details(wrongAnswer):
         }"""
 
 
-    response = chat_session.send_message(system_prompt + ", Question:-"+wrongAnswer.question + ",topic:- " + wrongAnswer.topic + ",answer:-" + wrongAnswer.answer + ",choosen anser:-" + wrongAnswer.choosen_answer)
+    response = chat_session.send_message(system_prompt + ", Question:-"+wrongAnswer.question + ",topic:- " + wrongAnswer.topic + ",answer:-" + wrongAnswer.answer + ",choosen answer array:-" + wrongAnswer.choosen_answer)
     print(response.text)
-    return   response.text
+    return response.text
