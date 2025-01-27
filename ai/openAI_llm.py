@@ -5,8 +5,6 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
-messages = []
-
 
 os.environ["LANGSMITH_TRACING"] = "true"
 os.environ["LANGSMITH_ENDPOINT"] = "https://api.smith.langchain.com"
@@ -36,9 +34,9 @@ humanMessage = SystemMessage(content="""
         # Use relevant emojis to make the response more engaging and friendly.
         """)
 
-messages.append(humanMessage)
 
-def create_explaination(wrongAnswer ,messages = messages):
+def create_explaination(wrongAnswer):
+    messages = [humanMessage]
     llm = ChatOpenAI(
     model="gpt-4o-mini",
     temperature=0,
@@ -47,9 +45,7 @@ def create_explaination(wrongAnswer ,messages = messages):
     )
     aiMessage = HumanMessage(content=f"Question:- {wrongAnswer.question}  topic:- {wrongAnswer.topic} answer:- {wrongAnswer.answer} choosen answer array:- {wrongAnswer.choosen_answer}")
     messages.append(aiMessage)
-    assert(len(messages) == 2)
     aiResonse = llm.invoke(messages)
-    del messages[-1]
     return (aiResonse.content)
 
 
