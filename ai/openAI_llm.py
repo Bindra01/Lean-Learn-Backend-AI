@@ -1,4 +1,4 @@
-rom langchain_openai import ChatOpenAI
+from langchain_openai import ChatOpenAI
 from langchain_core.messages import SystemMessage, AIMessage, HumanMessage
 import os
 from dotenv import load_dotenv 
