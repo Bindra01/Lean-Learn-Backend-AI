@@ -47,7 +47,9 @@ def create_explaination(wrongAnswer ,messages = messages):
     )
     aiMessage = HumanMessage(content=f"Question:- {wrongAnswer.question}  topic:- {wrongAnswer.topic} answer:- {wrongAnswer.answer} choosen answer array:- {wrongAnswer.choosen_answer}")
     messages.append(aiMessage)
+    assert(len(messages) == 2)
     aiResonse = llm.invoke(messages)
+    del messages[-1]
     return (aiResonse.content)
 
 
