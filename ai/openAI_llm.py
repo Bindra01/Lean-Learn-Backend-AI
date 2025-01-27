@@ -1,5 +1,5 @@
-from langchain_openai import ChatOpenAI
-from langchain_core.messages import SystemMessage, AIMessage, HumanMessage
+from langchain.chat_models import ChatOpenAI
+from langchain.schema import SystemMessage, AIMessage, HumanMessage
 import os
 from dotenv import load_dotenv
 
@@ -42,8 +42,8 @@ def create_explaination(wrongAnswer ,messages = messages):
     llm = ChatOpenAI(
     model="gpt-4o-mini",
     temperature=0,
-    max_tokens=None,
-    timeout=None,
+    max_tokens=150,
+    timeout=15,
     )
     aiMessage = HumanMessage(content=f"Question:- {wrongAnswer.question}  topic:- {wrongAnswer.topic} answer:- {wrongAnswer.answer} choosen answer array:- {wrongAnswer.choosen_answer}")
     messages.append(aiMessage)
