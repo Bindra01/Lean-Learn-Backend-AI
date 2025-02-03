@@ -8,11 +8,15 @@ def formula_question_entity(item):
         'subject': item.get("subject", ""),
         'topic': item.get("topic", ""),
         'question': item.get("question", ""),
+        "quantities": [
+            {"name": q.get("name", ""), "symbol": q.get("symbol", ""), "isUnknown": bool(q.get("isUnknown", False))}
+            for q in item.get("quantities", [])
+        ],
+        "formula": item.get("formula", []),
         "options": item.get("options", []),
-        'answers': item.get('answer', []),
+        'answers': item.get('answers', []),
         'resource': item.get('resource', []),
         'used': bool(item.get('used', False)) 
-         # Added used field
     }
 
 def formula_question_entitys(items):
