@@ -7,6 +7,7 @@ from api.tfQuestionRouter import router as tf_router
 from api.aiRouter import router as ai_router
 from api.formulaQuestionRouter import router as formula_router
 from api.fillQUestionRouter import router as fill_router
+from api.qtyRouter import router as qty_router
 import uvicorn
 app = FastAPI()
 @app.exception_handler(ValidationError)
@@ -32,3 +33,4 @@ app.include_router(mcq_router)
 app.include_router(fill_router)
 app.include_router(formula_router)
 app.include_router(ai_router)
+app.include_router(qty_router)

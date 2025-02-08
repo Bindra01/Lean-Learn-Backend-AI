@@ -14,12 +14,12 @@ uri = os.getenv("uri")
 client = MongoClient(uri, server_api=ServerApi('1'),tls=True, tlsCAFile=certifi.where())
 
 db = client["questions_db"]
+qdb=client["utils_db"]
 mcq_collection = db["mcq_collection"]
 tf_collection = db["tf_collection"]
 fill_collection = db["fill_collection"]
 formula_collection = db["formula_collection"]
-
-
+qty_collection =qdb["quantity_collection"]
 
 
 
