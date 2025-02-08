@@ -13,7 +13,7 @@ def get_all_qty():
 
 
 def Create_qty(qtySchema: qtySchema):
-    quantity = qty_collection.find_one({"qty_name": qtySchema.quantity})
+    quantity = qty_collection.find_one({"qty_name": qtySchema.qty_name})
     if quantity:
         raise HTTPException(status_code=status.HTTP_409_CONFLICT, detail="quantity already exists")
     
