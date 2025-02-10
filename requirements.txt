@@ -9,3 +9,4 @@ google
 google-generativeai
 langchain-openai
 langsmith
+fastapi[standard]
